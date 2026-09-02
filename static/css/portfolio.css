@@ -1,4 +1,3 @@
-
 :root{
     --bg:#050810;
     --panel:#0a1220;
@@ -176,7 +175,7 @@ section{padding:80px 0; border-top:1px solid var(--line);}
 .terminal-status{margin-left:auto; color:var(--cyan-dim); font-size:11px;}
 .terminal-body{padding:30px 34px 34px;}
 .terminal-line{display:flex; gap:12px; color:var(--text); margin:0 0 12px; line-height:1.6;}
-.terminal-prompt{color:var(--cyan);}
+.terminal-prompt{color:var(--cyan); white-space:nowrap;}
 .terminal-output{color:var(--muted); max-width:78ch; margin:0 0 24px; line-height:1.7;}
 .terminal-intro{color:var(--text); margin-bottom:28px;}
 .terminal-output strong{color:var(--text); font-weight:500;}
@@ -189,6 +188,45 @@ section{padding:80px 0; border-top:1px solid var(--line);}
 .cursor{width:8px; height:17px; margin-top:3px; background:var(--cyan); animation:cursorBlink 1s steps(2, start) infinite;}
 @keyframes cursorBlink{50%{opacity:0;}}
 @media (prefers-reduced-motion: reduce){.cursor{animation:none;}}
+
+/* ── terminal typing animation ─────────────────────────────── */
+
+/* content that hasn't "printed" yet: no space reserved, invisible */
+.is-hidden{
+    display:none;
+    opacity:0;
+}
+/* once JS flips the state, elements fade in as they print */
+.terminal-output[data-reveal],
+.terminal-output[data-reveal-block],
+.terminal-line[data-final-prompt]{
+    opacity:0;
+    transition:opacity .35s ease;
+}
+.is-visible{
+    opacity:1 !important;
+}
+
+/* the caret that types out each command line */
+.type-caret{
+    display:inline-block;
+    width:8px; height:16px;
+    margin-left:1px;
+    background:var(--cyan);
+    box-shadow:0 0 6px var(--cyan);
+    vertical-align:-2px;
+    opacity:0;
+}
+.terminal-line.is-typing .type-caret{
+    opacity:1;
+    animation:cursorBlink 1s steps(2, start) infinite;
+}
+.terminal-line.is-done .type-caret{
+    opacity:0;
+}
+@media (prefers-reduced-motion: reduce){
+    .terminal-line.is-typing .type-caret{animation:none; opacity:1;}
+}
 
 /* SKILLS */
 .gauge-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px 50px;}

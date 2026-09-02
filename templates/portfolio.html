@@ -62,22 +62,38 @@
         <span class="terminal-title">alex@portfolio: ~/about</span>
         <span class="terminal-status">● connected</span>
       </div>
-      <div class="terminal-body">
-        <div class="terminal-line"><span class="terminal-prompt">alex@portfolio:~$</span> whoami</div>
-        <p class="terminal-output terminal-intro">Product designer &amp; frontend engineer building clear tools for complex systems.</p>
+      <div class="terminal-body" id="terminalBody">
 
-        <div class="terminal-line"><span class="terminal-prompt">alex@portfolio:~$</span> cat experience.txt</div>
-        <p class="terminal-output"><strong>06 years</strong> designing and shipping software for teams operating under real-time pressure — logistics, monitoring tools, and internal platforms where a confusing screen has a real cost.</p>
-        <p class="terminal-output">I work across the full loop: research, wireframes, high-fidelity design, and the frontend code to ship it.</p>
+        <div class="terminal-line" data-cmd="whoami">
+          <span class="terminal-prompt">alex@portfolio:~$</span>
+          <span class="type-text"></span><span class="type-caret"></span>
+        </div>
+        <p class="terminal-output terminal-intro is-hidden" data-reveal="Product designer &amp; frontend engineer building clear tools for complex systems.">
+        </p>
 
-        <div class="terminal-line"><span class="terminal-prompt">alex@portfolio:~$</span> ./system-info</div>
-        <div class="terminal-output terminal-info">
+        <div class="terminal-line" data-cmd="cat experience.txt">
+          <span class="terminal-prompt">alex@portfolio:~$</span>
+          <span class="type-text"></span><span class="type-caret"></span>
+        </div>
+        <p class="terminal-output is-hidden" data-reveal="&lt;strong&gt;06 years&lt;/strong&gt; designing and shipping software for teams operating under real-time pressure — logistics, monitoring tools, and internal platforms where a confusing screen has a real cost.">
+        </p>
+        <p class="terminal-output is-hidden" data-reveal="I work across the full loop: research, wireframes, high-fidelity design, and the frontend code to ship it.">
+        </p>
+
+        <div class="terminal-line" data-cmd="./system-info">
+          <span class="terminal-prompt">alex@portfolio:~$</span>
+          <span class="type-text"></span><span class="type-caret"></span>
+        </div>
+        <div class="terminal-output terminal-info is-hidden" data-reveal-block>
           <div><span>location</span><b>Remote / GMT+5:30</b></div>
           <div><span>focus</span><b>Product design, design systems</b></div>
           <div><span>stack</span><b>Figma, React, TypeScript</b></div>
           <div><span>status</span><b class="terminal-ready">Open to work</b></div>
         </div>
-        <div class="terminal-line terminal-cursor"><span class="terminal-prompt">alex@portfolio:~$</span><span class="cursor" aria-hidden="true"></span></div>
+
+        <div class="terminal-line terminal-cursor is-hidden" data-final-prompt>
+          <span class="terminal-prompt">alex@portfolio:~$</span><span class="cursor" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -156,5 +172,6 @@
 
 </div>
 
+<script src="{{ url_for('static', filename='js/terminal.js') }}"></script>
 </body>
 </html>
