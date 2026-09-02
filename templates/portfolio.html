@@ -53,19 +53,31 @@
 
   <section id="about">
     <div class="section-head">
-      <h2>Profile</h2>
-      <span class="section-index">01 / OVERVIEW</span>
+      <h2>About</h2>
+      <span class="section-index">01 / WHOAMI</span>
     </div>
-    <div class="about-grid">
-      <div>
-        <p><strong>Six years</strong> designing and shipping software for teams that operate under real time pressure — logistics, monitoring tools, and internal platforms where a confusing screen has a real cost.</p>
-        <p>I work across the full loop: research, wireframes, high-fidelity design, and the frontend code to ship it. Currently based between design systems and production React.</p>
+    <div class="about-terminal" role="region" aria-label="About Alex Ren terminal">
+      <div class="terminal-bar">
+        <span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="terminal-title">alex@portfolio: ~/about</span>
+        <span class="terminal-status">● connected</span>
       </div>
-      <div class="readout-list">
-        <div class="readout"><span>LOCATION</span><span>Remote / GMT+5:30</span></div>
-        <div class="readout"><span>FOCUS</span><span>Product design, design systems</span></div>
-        <div class="readout"><span>STACK</span><span>Figma, React, TypeScript</span></div>
-        <div class="readout"><span>STATUS</span><span style="color:var(--cyan);">Open to work</span></div>
+      <div class="terminal-body">
+        <div class="terminal-line"><span class="terminal-prompt">alex@portfolio:~$</span> whoami</div>
+        <p class="terminal-output terminal-intro">Product designer &amp; frontend engineer building clear tools for complex systems.</p>
+
+        <div class="terminal-line"><span class="terminal-prompt">alex@portfolio:~$</span> cat experience.txt</div>
+        <p class="terminal-output"><strong>06 years</strong> designing and shipping software for teams operating under real-time pressure — logistics, monitoring tools, and internal platforms where a confusing screen has a real cost.</p>
+        <p class="terminal-output">I work across the full loop: research, wireframes, high-fidelity design, and the frontend code to ship it.</p>
+
+        <div class="terminal-line"><span class="terminal-prompt">alex@portfolio:~$</span> ./system-info</div>
+        <div class="terminal-output terminal-info">
+          <div><span>location</span><b>Remote / GMT+5:30</b></div>
+          <div><span>focus</span><b>Product design, design systems</b></div>
+          <div><span>stack</span><b>Figma, React, TypeScript</b></div>
+          <div><span>status</span><b class="terminal-ready">Open to work</b></div>
+        </div>
+        <div class="terminal-line terminal-cursor"><span class="terminal-prompt">alex@portfolio:~$</span><span class="cursor" aria-hidden="true"></span></div>
       </div>
     </div>
   </section>
