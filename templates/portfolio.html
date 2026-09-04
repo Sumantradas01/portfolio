@@ -21,6 +21,7 @@
       <a href="#education">EDUCATION</a>
       <a href="#skills">SKILLS</a>
       <a href="#work">WORK</a>
+      <a href="#resume">RESUME</a>
       <a href="#contact">CONTACT</a>
     </nav>
   </div>
@@ -36,6 +37,7 @@
       <p class="hero-desc">I design and build interfaces that make complex systems feel legible — dashboards, tools, and products for teams who need to see clearly and act fast.</p>
       <div class="hero-actions">
         <a href="#work" class="btn btn-primary">VIEW WORK →</a>
+        <a href="{{ url_for('static', filename='files/Sumantra_Das_Resume.pdf') }}" class="btn btn-ghost" download>↓ DOWNLOAD RESUME</a>
         <a href="#contact" class="btn btn-ghost">GET IN TOUCH</a>
       </div>
     </div>
@@ -187,10 +189,27 @@
     </div>
   </section>
 
+  <section id="resume">
+    <div class="section-head">
+      <h2>Resume</h2>
+      <span class="section-index">05 / DOWNLOAD</span>
+    </div>
+    <div class="panel resume-panel">
+      <div class="resume-info">
+        <h2>Get the full picture.</h2>
+        <p>A one-page PDF covering education, skills, and project experience — updated for 2026.</p>
+      </div>
+      <a href="{{ url_for('static', filename='files/Sumantra_Das_Resume.pdf') }}" class="btn btn-primary resume-btn" download>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        DOWNLOAD RESUME (PDF)
+      </a>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="section-head">
       <h2>Transmission</h2>
-      <span class="section-index">05 / CONTACT</span>
+      <span class="section-index">06 / CONTACT</span>
     </div>
     <div class="panel contact-panel">
       <div>
